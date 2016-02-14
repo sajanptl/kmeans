@@ -1,0 +1,15 @@
+*~
+*.o
+*.a
+*.so
+*.swp
+/build
+*.out
+*.aux
+*.synctex.gz
+*.log
+*.DS_Store
+*.bbl
+*.blg
+*.pdf
+*.dvi
