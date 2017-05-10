@@ -1,3 +1,6 @@
+#ifndef KMEANS_HPP
+#define KMEANS_HPP
+
 #include <iostream>
 #include <vector>
 #include <map>
@@ -48,3 +51,5 @@ private:
     void assignPoint(size_t p, const std::vector<Eigen::VectorXd> &points);
     void calcCentroid(size_t c, const std::vector<Eigen::VectorXd> &points);
 };
+
+#endif /* KMEANS_HPP */
