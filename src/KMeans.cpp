@@ -6,19 +6,17 @@ using std::vector;
 using std::multimap;
 using Eigen::VectorXd;
 
-KMeans::KMeans(size_t K, size_t d, double threshold, double maxIterations)
+KMeans::KMeans(size_t K, size_t d, double threshold, size_t maxIterations)
     : threshold_(threshold), maxIterations_(maxIterations)
 {
     prevCentroids_.resize(K);
     centroids_.resize(K);
     
-    VectorXd zeroVec(d);
-    zeroVec.setZero();
-
-    for (size_t i = 0; i < K; ++i) prevCentroids_[i] = centroids_[i] = zeroVec;
-
+    for (size_t i = 0; i < K; ++i) 
+		prevCentroids_[i] = centroids_[i] = VectorXd::Zero(d);
+	
     clusters_.clear();
-
+	
     stats_.numIterations = 0;
     stats_.totalError = 0;
 } 

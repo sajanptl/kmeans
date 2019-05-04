@@ -18,7 +18,7 @@ public:
     // K = number of clusters, d = number of dimensions in feature vectors,
     // threshold = convergence threshold for error of an individual centroid,
     // maxIterations = max number of iterations to run
-    KMeans(size_t K, size_t d, double threshold, double maxIterations);
+    KMeans(size_t K, size_t d, double threshold, size_t maxIterations);
     
     // runs KMeans on the points (feature vectors) passed in
     // NOTE: The user must maintain the points vector for use before and after
@@ -29,10 +29,10 @@ public:
     // returns multimap of cluster indexes to indexes of points in vector of 
     // points passed into the run function.
     // User can use this map to display cluster membership in any way
-    const std::multimap<size_t, size_t>& clusters() const { return clusters_; }
+    std::multimap<size_t, size_t> clusters() const { return clusters_; }
     
     // returns the centroids of the K clusters
-    const std::vector<Eigen::VectorXd>& centroids() const { return centroids_; }
+    std::vector<Eigen::VectorXd> centroids() const { return centroids_; }
 
     // returns statistics for the algorithm's performance
     Statistics stats() const { return stats_; }

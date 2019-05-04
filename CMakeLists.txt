@@ -37,12 +37,10 @@ set(CMAKE_AUTOMOC ON)
 # Find required libs
 find_package(Eigen3 REQUIRED)
 
-# Dependency on rex_arm and libcorso_rexarm.so
 add_subdirectory(src)
 
-#enable_testing()
-#add_subdirectory(test)
-
+enable_testing()
+add_subdirectory(test)
 	
 message(STATUS "")
 message(STATUS "Building a ${CMAKE_BUILD_TYPE} build")
